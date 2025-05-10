@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-print(getattr(string, 'ascii_uppercase'))
+exec(compile(open(__file__).read().splitlines()[1][1:], '', 'exec'))
+# print(chr(i) for i in range(65, 91))
