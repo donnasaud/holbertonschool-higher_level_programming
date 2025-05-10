@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-__import__('101-print')
+__import__('print_101')
