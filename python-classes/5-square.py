@@ -1,27 +1,35 @@
 #!/usr/bin/python3
-"""Defines a class Square that can print itself with '#' characters."""
+"""
+This module defines a Square class with encapsulated size,
+area computation, and a print method to display the square.
+"""
 
 
 class Square:
-    """Represents a square with size, area computation, and print capability."""
+    """
+    Represents a square with size encapsulation and area calculation.
+
+    Attributes:
+        __size (int): The size of the square (private).
+    """
 
     def __init__(self, size=0):
         """
-        Initializes a square with size.
+        Initializes a new Square instance with a given size.
 
         Args:
-            size: The size of the square (default is 0).
+            size (int): The size of the square (default is 0).
 
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
         """
-        self.size = size
+        self.size = size  # Uses the setter for validation
 
     @property
     def size(self):
         """
-        Retrieves the current size of the square.
+        Retrieves the size of the square.
 
         Returns:
             int: The size of the square.
@@ -34,7 +42,7 @@ class Square:
         Sets the size of the square with validation.
 
         Args:
-            value: The new size of the square.
+            value (int): The new size value.
 
         Raises:
             TypeError: If value is not an integer.
@@ -57,12 +65,13 @@ class Square:
 
     def my_print(self):
         """
-        Prints the square using the '#' character to stdout.
+        Prints the square using the'#'char.If size is 0,prints an empty line.
 
-        If size is 0, prints an empty line.
+        Returns:
+            None
         """
         if self.__size == 0:
             print()
         else:
             for _ in range(self.__size):
-                print("#" * self.__size)
+                print('#' * self.__size)
