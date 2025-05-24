@@ -3,12 +3,15 @@
 
 
 class Rectangle:
-    """Represents a rectangle with width, height, and instance tracking."""
+    """Represents a rectangle with width, height, area, perimeter,
+    string representation, and instance tracking."""
 
     number_of_instances = 0  # Class attribute to count instances
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle instance and increment instance counter."""
+        """Initialize a new Rectangle instance.
+        Increment instance counter.
+        """
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
@@ -59,7 +62,9 @@ class Rectangle:
         return "\n".join(lines)
 
     def __repr__(self):
-        """Return a string that can recreate this instance using eval()."""
+        """Return a string that can recreate this instance
+        using eval().
+        """
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
