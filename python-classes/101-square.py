@@ -47,12 +47,12 @@ class Square:
         if self.__size == 0:
             print()
             return
-        print(self.__str__(), end="")
+        print(self.__str__())
 
     def __str__(self):
         """Return the square as a string with '#' and position offsets."""
         if self.__size == 0:
-            return "\n"
+            return ""
 
         lines = []
         # Vertical offset
@@ -62,5 +62,4 @@ class Square:
             line = " " * self.__position[0] + "#" * self.__size
             lines.append(line)
 
-        return "\n".join(lines) + "\n"
-
+        return "\n".join(lines)
