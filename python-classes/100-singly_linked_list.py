@@ -82,11 +82,11 @@ class SinglyLinkedList:
             new_node.next_node = current.next_node
             current.next_node = new_node
 
-    def __str__(self):
-        """Returns a string representation of the list with one node per line."""
-        result = []
-        current = self.__head
-        while current is not None:
-            result.append(str(current.data))
-            current = current.next_node
-        return "\n".join(result)
+def __str__(self):
+    """String representation of the singly linked list, one node per line."""
+    current = self.__head
+    values = []
+    while current is not None:
+        values.append(str(current.data))
+        current = current.next_node
+    return "\n".join(values)
