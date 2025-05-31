@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+
 """MyInt is a rebel that inverts == and !="""
+
 
 class MyInt(int):
     """A subclass of int with inverted equality operators"""
