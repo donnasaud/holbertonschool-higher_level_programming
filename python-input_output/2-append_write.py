@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-
 """
-This module contains a function that appends text to a UTF-8 file
-and returns the number of characters added.
+This module defines a function that appends text to a file.
 """
 
 
 def append_write(filename="", text=""):
-    """Appends text to a UTF-8 file and returns number of characters added"""
+    """Appends a string at the end of a UTF8 text file"""
     with open(filename, "a", encoding="utf-8") as f:
         return f.write(text)
-
