@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 This module contains a function that appends text to a UTF-8 file
 and returns the number of characters added.
