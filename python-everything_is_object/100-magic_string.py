@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 def magic_string():
     from counter import Counter
     Counter.i += 1
