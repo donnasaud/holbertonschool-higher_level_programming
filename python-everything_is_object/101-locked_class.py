@@ -1,5 +1,5 @@
-"""Defines a class LockedClass that only allows 'first_name' attribute."""
+"""Module that defines LockedClass with restricted attribute creation."""
 #!/usr/bin/python3
 class LockedClass:
-    __slots__ = ['first_name']
-
+    """Prevents dynamic attributes except 'first_name'."""
+    __slots__ = ["first_name"]
