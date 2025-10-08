@@ -1,6 +1,27 @@
 #!/usr/bin/python3
+"""Matrix multiplication with full input validation.
+
+This module defines `matrix_mul(m_a, m_b)` which multiplies two matrices
+after validating types, shapes, and contents, following the task’s rules.
+"""
+
+
 def matrix_mul(m_a, m_b):
-    """Multiply two matrices"""
+    """Multiply two matrices m_a and m_b after strict validation.
+
+    Args:
+        m_a (list of lists of int/float): Left matrix.
+        m_b (list of lists of int/float): Right matrix.
+
+    Returns:
+        list of lists of int/float: The product matrix.
+
+    Raises:
+        TypeError: If m_a or m_b is not a list or not a list of lists,
+                   or if elements are not int/float,
+                   or if rows are not all the same size.
+        ValueError: If m_a or m_b is empty, or if they cannot be multiplied.
+    """
     # Validate m_a and m_b are lists
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
@@ -19,7 +40,7 @@ def matrix_mul(m_a, m_b):
     if m_b == [] or m_b == [[]]:
         raise ValueError("m_b can't be empty")
 
-    # Validate all elements are int or float
+    # Validate elements are int/float
     if not all(isinstance(num, (int, float)) for row in m_a for num in row):
         raise TypeError("m_a should contain only integers or floats")
     if not all(isinstance(num, (int, float)) for row in m_b for num in row):
@@ -31,7 +52,7 @@ def matrix_mul(m_a, m_b):
     if len(set(len(row) for row in m_b)) != 1:
         raise TypeError("each row of m_b must be of the same size")
 
-    # Validate matrix multiplication rule
+    # Validate multiplicability: columns in A == rows in B
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
