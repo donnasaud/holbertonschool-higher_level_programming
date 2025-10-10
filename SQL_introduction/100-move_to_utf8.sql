@@ -15,9 +15,10 @@ ALTER TABLE first_table
   CONVERT TO CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
--- 4) Re-define the column WITHOUT specifying CHARACTER SET, only COLLATE
---    Using CHANGE (name appears twice) clears any explicit charset on the column.
+-- 4) Change column: remove explicit CHARACTER SET from the definition
+-- This makes MySQL inherit the table/default charset for the column.
 ALTER TABLE first_table
-  CHANGE name name VARCHAR(256)
+  MODIFY name VARCHAR(256)
   COLLATE utf8mb4_unicode_ci
   DEFAULT NULL;
+
